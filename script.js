@@ -14,11 +14,11 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+/*contains all the data for the random quote generator, these will be displayed randomly when the user clicks on the button*/
 var quotes = [
 	{
 		quote: "Sometimes in life we must fight not only without fear, but also without hope.", 
 		source: "Alessandro Pertini"
-
 	},
 
 	{
@@ -41,22 +41,32 @@ var quotes = [
 		source: "Epictetus"
 	},
 
+	{
+		quote: "The basic philosophy of stoicism is that you have nothing real external to your own consciousness, that the only thing real is in fact your consciousness.",
+		source: "Roger Avery"
+	},
+
+	{
+		quote: "Once we accept our limits, we go beyond them.",
+		source: "Albert Einstein"
+	},
+
+	{
+		quote: "What man actually needs is not a tensionless state but rather the striving and struggling for some goal worthy of him.",
+		source: "Victor Frank"
+	}
+
 ]
-
-
 
 /***
  * `getRandomQuote` function
 ***/
+/*a function that will generate a random whole number based on how many quotes exist in the array of objects*/
 function getRandomQuote() {
  var random = Math.floor( Math.random () * quotes.length );
   var printRandom = quotes[random]; 
  return printRandom;
 }
-
-
-
-
 //another function for way of print random quotes generator.
 //using getRandomQuote function and if statement
 //so if the object has citation or year property, it shows up on web.
@@ -72,14 +82,10 @@ function printQuote () {
     if ( randomQuote.year ){
      index += '<span class = "year">' + randomQuote.year + '</span>'
     };
-    index += '</P>';
+    index += '</p>';
   var outputDiv = document.getElementById('quote-box');
   outputDiv.innerHTML = index;
 }
-
-
-
-
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
