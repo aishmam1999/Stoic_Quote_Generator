@@ -1,19 +1,14 @@
-
-
-
-
 /******************************************
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
+Alif Ishmam
 ******************************************/
 
 // For assistance: 
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
-***/
+
 /*contains all the data for the random quote generator, these will be displayed randomly when the user clicks on the button*/
 var quotes = [
 	{
@@ -71,10 +66,9 @@ function getRandomQuote() {
   var printRandom = quotes[random]; 
  return printRandom;
 }
-//another function for way of print random quotes generator.
-//using getRandomQuote function and if statement
-//so if the object has citation or year property, it shows up on web.
-//connect div in html file classed "quote-box"
+
+/*this is the print quote function, this function randomly identifies a quote from the array of objects and will print it out on the webpage.*/
+/*it also contains cinditional statements which checks for citation and year*/
 function printQuote () {
   var randomQuote = getRandomQuote();
   var index = '';
@@ -86,8 +80,8 @@ function printQuote () {
   	if (randomQuote.year){
   		index += '<span class = "citation">' + randomQuote.year;
   	}
-  var outputDiv = document.getElementById('quote-box');
-  outputDiv.innerHTML = index;
+   var outputDiv = document.getElementById('quote-box');
+   outputDiv.innerHTML = index;
 }
 /***
  * click event listener for the print quote button
