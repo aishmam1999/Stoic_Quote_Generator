@@ -18,17 +18,20 @@ project 1 - A Random Quote Generator
 var quotes = [
 	{
 		quote: "Sometimes in life we must fight not only without fear, but also without hope.", 
-		source: "Alessandro Pertini"
+		source: "Alessandro Pertini",
+		citation: "daily stoic"
 	},
 
 	{
 		quote: "Feeling too much is a hell of a lot better than feeling nothing.",
-		source: "Nora Roberts"
+		source: "Nora Roberts",
+		citation: "daily stoic"
 	},
 
 	{
 		quote: "We suffer more in imagination than in reality.",
-		source: "Seneca"
+		source: "Seneca",
+		year: "65 AD"
 	},
 
 	{
@@ -48,7 +51,8 @@ var quotes = [
 
 	{
 		quote: "Once we accept our limits, we go beyond them.",
-		source: "Albert Einstein"
+		source: "Albert Einstein",
+		year : "1945"
 	},
 
 	{
@@ -75,14 +79,13 @@ function printQuote () {
   var randomQuote = getRandomQuote();
   var index = '';
   index += '<p class = "quote">' + randomQuote.quote + '</p>'
-  index += '<p calss = "source">' + randomQuote.source;
-    if ( randomQuote.citation ){
-     index += '<span class = "citation">' + randomQuote.citation + '</span>'
-    };
-    if ( randomQuote.year ){
-     index += '<span class = "year">' + randomQuote.year + '</span>'
-    };
-    index += '</p>';
+  index += '<p class = "source">' + randomQuote.source;
+  	if (randomQuote.citation){
+  		index += '<span class = "citation">' + randomQuote.citation;
+  	}
+  	if (randomQuote.year){
+  		index += '<span class = "citation">' + randomQuote.year;
+  	}
   var outputDiv = document.getElementById('quote-box');
   outputDiv.innerHTML = index;
 }
